@@ -49,16 +49,7 @@ class Catalogue:
 
     def afficher_produits(self, tri: StrategieTrie , affichage: str) -> list[dict]:
         produits = self.tous()
-
-        # Tri
-        #if tri == "prix":
-            #produits = sorted(produits, key=lambda p: p.prix_total())
-        #elif tri == "popularite":
-            #produits = sorted(produits, key=lambda p: p.nb_ventes, reverse=True)
-        #elif tri == "nom":
-            #produits = sorted(produits, key=lambda p: p.nom.lower())
-
-        return tri.afficher_produits(produits)
+        tri.afficher_produits(produits)
 
         # Affichage
         resultat = []
