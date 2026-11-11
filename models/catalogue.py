@@ -58,8 +58,7 @@ class Catalogue:
         #elif tri == "nom":
             #produits = sorted(produits, key=lambda p: p.nom.lower())
 
-        for t in tri:
-            print(t)
+        return tri.afficher_produits(produits)
 
         # Affichage
         resultat = []
