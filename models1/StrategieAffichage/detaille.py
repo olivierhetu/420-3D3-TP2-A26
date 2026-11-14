@@ -2,7 +2,8 @@ from StrategieAffichage import StrategieAffichage
 
 class detaille(StrategieAffichage):
 
-    def affichage(resultat : list, produits : list[dict]):
+    def affichage(produits : list)   -> list[dict]:
+        resultat = []
         for p in produits:
             resultat.append({
                                 "id": id,

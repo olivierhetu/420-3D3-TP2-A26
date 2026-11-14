@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 class StrategieAffichage(ABC):
 
      @abstractmethod
-     def affichage(resultat : list, produits : list[dict]):
+     def affichage(produits : list)   -> list[dict]:
           pass
 
 

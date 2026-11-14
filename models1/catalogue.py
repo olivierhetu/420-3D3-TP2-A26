@@ -1,6 +1,7 @@
 import json
 from models import ProduitNumerique, Bundle
 from StrategieTri import StrategieTrie
+from StrategieAffichage import StrategieAffichage
 
 
 class Catalogue:
@@ -47,33 +48,11 @@ class Catalogue:
     def obtenir(self, id: int):
         return self._produits.get(id)
 
-    def afficher_produits(self, tri: StrategieTrie , affichage: str) -> list[dict]:
+    def afficher_produits(self, tri: StrategieTrie , affichage: StrategieAffichage) -> list[dict]:
         produits = self.tous()
-        tri.afficher_produits(produits)
+        tri.trier(produits)
 
         # Affichage
-        resultat = []
-        for p in produits:
-            if affichage == "compact":
-                resultat.append({
-                    "id": p.id,
-                    "nom": p.nom,
-                    "prix_total": p.prix_total(),
-                    "image_url": p.image_url,
-                    "est_bundle": p.est_bundle(),
-                })
-            elif affichage == "detaille":
-                donnees = {
-                    "id": p.id,
-                    "nom": p.nom,
-                    "prix_total": p.prix_total(),
-                    "image_url": p.image_url,
-                    "description": p.description,
-                    "nb_ventes": p.nb_ventes,
-                    "est_bundle": p.est_bundle(),
-                }
-                if p.est_bundle():
-                    donnees["nb_items"] = p.nb_items()
-                resultat.append(donnees)
+        affichage.StrategieAffichage(produits)
 
-        return resultat
+        

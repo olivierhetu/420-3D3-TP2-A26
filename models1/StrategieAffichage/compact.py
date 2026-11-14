@@ -1,8 +1,10 @@
 from StrategieAffichage import StrategieAffichage
 
+
 class compact(StrategieAffichage):
 
-    def affichage(resultat : list, produits : list[dict]):
+    def affichage( produits : list)  -> list[dict]:
+        resultat = []
         for p in produits:
             donnees = {
                                 "id": p.id,
@@ -15,4 +17,5 @@ class compact(StrategieAffichage):
                             }
             if p.est_bundle():
                 donnees["nb_items"] = p.nb_items()
-                resultat.append(donnees)
+            resultat.append(donnees)
+        return resultat
