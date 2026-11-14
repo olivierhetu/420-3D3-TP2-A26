@@ -50,9 +50,10 @@ class Catalogue:
 
     def afficher_produits(self, tri: StrategieTrie , affichage: StrategieAffichage) -> list[dict]:
         produits = self.tous()
-        tri.trier(produits)
+        produits = tri.trier(produits)
 
         # Affichage
-        affichage.StrategieAffichage(produits)
+        resultat = affichage.afficher(produits)
+        return resultat
 
         

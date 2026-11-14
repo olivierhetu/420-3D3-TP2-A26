@@ -3,7 +3,7 @@ from StrategieAffichage import StrategieAffichage
 
 class compact(StrategieAffichage):
 
-    def affichage( produits : list)  -> list[dict]:
+    def afficher( produits : list)  -> list[dict]:
         resultat = []
         for p in produits:
             donnees = {
